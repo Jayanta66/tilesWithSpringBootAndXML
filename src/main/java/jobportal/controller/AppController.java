@@ -77,8 +77,8 @@ public class AppController {
 	
 	
 	
-	
-	@RequestMapping("/new")
+	@GetMapping("/new")
+//	@RequestMapping("/new")
 	public String showNewProductForm(Model model) {
 		Job product = new Job();
 		model.addAttribute("product", product);
@@ -86,7 +86,8 @@ public class AppController {
 		return "new_product";
 	}
 	
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	@PostMapping("/save")
+//	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String saveJob(@ModelAttribute("joblist") Job joblist) {
 		service.save(joblist);
 		
